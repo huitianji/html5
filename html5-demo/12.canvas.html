@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+</head>
+<body onload="dray('canvas')">
+
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+    function dray(id){
+
+        var canvas = document.getElementById(id);
+        if(canvas == null){
+            return false;
+        }
+        var context = canvas.getContext("2d");
+        context.fillStyle ="#fafafa";
+        context.fillRect(0,0,400,400);
+        for(var i = 0;i<=10;i++){
+            context.beginPath();
+            context.arc(i*25,i*25,i*10,0,2*Math.PI,true);
+            context.closePath();
+            context.fillStyle = "rgba(255,0,0,0.25)";
+            context.fill();
+        }
+    }
+</script>
+
+</body>
+</html>

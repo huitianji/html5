@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function cloneContent() {
+        var div = document.getElementById("div");
+        var rangeObj = document.createRange();
+
+        rangeObj.selectNodeContents(div);
+        var docFrangMent = rangeObj.cloneContents();
+
+        div.appendChild(docFrangMent);
+
+
+    }
+</script>
+<div id="div">
+    你好吗？
+    <br>
+    <button onclick="cloneContent()">克隆</button>
+</div>
+</body>
+</html>

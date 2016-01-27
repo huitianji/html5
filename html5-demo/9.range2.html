@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function cloneRange(){
+        var rangeObj = document.createRange();
+        rangeObj.selectNodeContents(document.getElementById("op"));
+
+        var rangeClone = rangeObj.cloneRange();
+
+        console.log(rangeClone.toString());
+    }
+</script>
+<p id="op">这里是随便写的内容</p>
+<button onclick="cloneRange()">克隆</button>
+</body>
+</html>

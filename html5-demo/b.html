@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-1.10.1.min.js"></script>
+    <style type="text/css">
+        div{
+            display: none;
+        }
+    </style>
+</head>
+<body class="obady">
+<div>这是一个</div>
+<div>这是2个</div>
+<div>这是3个</div>
+<div>这是4个</div>
+<script>
+    //"http://localhost:63342/jihuitian/html5/a.html?a=0"
+    var strArr = location.search.substr(1).split("=")["1"];
+    $(".obady>div").eq(strArr).css("display","block");
+</script>
+</body>
+</html>
