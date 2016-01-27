@@ -4,11 +4,42 @@
     <meta charset="utf-8">
     <title>15.图型绘制处理</title>
 </head>
-<body>
-
-<canvas></canvas>
+<body onload="drag('canvas')">
+<!--globalCompositeOperation = style 属性-->
+<canvas id="canvas" width="500" height="500"></canvas>
 
 <script>
+    function drag(id){
+        var canvas = document.getElementById(id);
+        var context = canvas.getContext("2d");
+
+        var opratns = new Array(
+                "source-over",
+                "source-atop",
+                "source-in",
+                "source-out",
+                "destination-over",
+                "destination-atop",
+                "destination-in",
+                "destination-out",
+                "lighter",
+                "copy",
+                "source-over"
+        );
+        i = 10;
+        context.fillStyle = "blue";
+        context.fillRect(10,10,60,60);
+
+        context.globalCompositeOperation = opratns[i];
+        context.beginPath();
+        context.arc(60,60,30,0,Math.PI*2,true);
+        context.closePath();
+
+        context.fillStyle = "red";
+        context.fill();
+    }
+    //https://code.createjs.com/createjs-2015.11.26.min.js
+
 
 </script>
 </body>
