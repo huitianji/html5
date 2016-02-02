@@ -4,3 +4,10 @@ http://ke.jikexueyuan.com/zhiye/web/
 
 
 createjs.com
+
+{
+    1: 处理html5的canvas
+    2:动画调整，js属性的
+    3:音频相关的一些api
+    4:程序的协调，一些加载项的内库
+}

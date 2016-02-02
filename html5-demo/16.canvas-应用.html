@@ -3,11 +3,40 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="js/createjs.min.js"></script>
 </head>
 <body>
-<canvas id="canvas" width="400" height="500"></canvas>
+
+<!--<input type="text" autocomplete="off" value="ceshiwenjian">-->
+
+<canvas id="canvas" width="500" height="500"></canvas>
 
 <script>
+
+    var canvas,
+            stage,
+            txt,
+            count = 0;
+
+    canvas = document.getElementById("canvas");
+    stage = new createjs.Stage(canvas);
+
+    txt = new createjs.Text("number->","20px Arial","#ff7700");
+    stage.addChild(txt);
+
+    createjs.Ticker.setFPS(30);
+//    createjs.Ticker.addEventListener("tick",stage);
+    createjs.Ticker.addEventListener("tick",tick);
+
+    //console.log(txt);
+
+    function tick(e){
+        count++;
+        txt.text ="number->" + count + "  !" ;
+        stage.update();//更新
+    }
+
+
 
 </script>
 
