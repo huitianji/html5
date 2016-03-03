@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        .odiv{
+            background-color: green;
+            /*transition:background-color 1s linear,transform 3s linear;*/
+        }
+        .odiv:hover{
+            background-color: red;;
+            /*transform:rotate(360deg);*/
+        }
+    </style>
+</head>
+<body>
+<!--
+	transition:progerty dration timing-function
+	1>
+
+	flex-direction 设置主轴方向，确定弹性子元素排列方式
+
+    flex-wrap  当弹性子元素 超出弹性容器范围时是否换行
+
+    justify-content  主轴上的对齐方式
+
+    align-items   侧轴上的对齐方式
+
+    align-content 侧轴上有空白时，侧轴的对齐方式
+
+    2>
+    弹性子元素的属性 -flex items
+
+    order  控制弹性容器里子元素的顺序
+    flex-grow 设置弹性子元素的扩展比例
+
+    flex-shrink 设置弹性子元素的收缩比例，不允许为负值，默认值为1
+    flex-basis 设置弹性子元素的 伸缩基准值，不允许为负值
+
+    flex   设置子元素如何去分配空间
+    flex:none | [flex-grow] | [flex-shrink] | [flex-basis]
+
+    align-self  设置弹性子元素在侧轴上的对齐方式 与 align-item的相同
+
+-->
+<div class="odiv">
+    示例文字
+</div>
+
+</body>
+</html>
