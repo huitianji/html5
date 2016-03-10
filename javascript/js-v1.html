@@ -12,28 +12,50 @@
 </head>
 <body>
 <form>
-    <input type="text">
+    <input id="txt" type="text">
     <br>
     <br>
     <input id="btn" type="button" onclick="demo()" value="点击">
 
 </form>
+
 <script>
     function demo(){
+        try{
+            var e = document.getElementById("txt").value;
+            if(e == ""){
+                throw "请输入";
+            }
+        }catch(err){
+            alert(err);
+        }
 
     }
-
+/*1*/
     {
-//    function er(){
-//        try{
-//            alert(str);
-//        }catch(err) {
-//            //alert(str);
-//        }
-//
-//    }
-//    er();
+//        var str;
+        function er(){
+            try{
+                alert(str);
+                //throw new Error(str);
+            }catch(err) {
+                alert(err);
+            }
+        }
+//        er();
     }
+    /*2*/
+    function person(name,age){
+        this._name = name;
+        this._age  = age;
+    }
+   po = new person("ji","sge");
+    document.write(po._name + "---" + po._age);
+    document.write("<br>")
+    document.write("{"+window.innerHeight+"}                   " +
+            "{"+window.innerWidth+"}");
 </script>
+<div style="height: 900px;background-color: gray"></div>
+
 </body>
 </html>

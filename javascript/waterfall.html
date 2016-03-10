@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container{
+            position: relative;
+            clear:both;
+        }
+        .box{
+            padding: 5px;;
+            float: left;
+        }
+        .box-img{
+            padding: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 5px #ccc;
+            border-radius(5px);
+        }
+        .box-img img{
+            width: 150px;
+            height: auto;
+        }
+        .cf:before, .cf:after {
+            content:" ";
+            display:table;
+        }
+        .cf:after {
+            clear:both;
+        }
+        .cf {
+            zoom:1;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="cf">
+    <div class="box">
+        <div class="box-img">
+            <img src="images/a.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/b.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/c.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/d.png">
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="images/e.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/f.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/g.png">
+        </div>
+    </div>
+    <div class="box">
+        <div class="box-img">
+            <img src="images/h.png">
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-img">
+            <img src="images/a.png">
+        </div>
+    </div>
+</div>
+<script>
+   window.onload = function(){
+        imgLocation("container","box");
+   }
+   function imgLocation(parent,content){
+        var cParent = document.getElementById(parent);
+        var cContent = getChildElement(cParent,content);
+        var imgWidth =cContent[0].offsetWidth;
+       var cols = Math.floor(document.documentElement.clientWidth / imgWidth);
+       //console.log(document.documentElement.clientHeight);
+   }
+   function getChildElement(parent,content){
+
+        var contentArr = [];
+        var allContent = document.getElementsByTagName("*");
+
+        for(var i = 0, len = allContent.length;i<len;i++){
+            if(allContent[i].className == content){
+                contentArr.push(allContent[i]);
+            }
+        }
+        return contentArr;
+   }
+</script>
+<hr>
+<br>
+<hr>
+<div id="box-ct" style="color:green;font-size:20px;font-weight: bold;">
+    测试文章
+</div>
+<script>
+    function setStyle(obj,css){
+        for(var attr in css){
+            obj.style[attr] = css[attr];
+        }
+    }
+    var boxct = document.getElementById("box-ct");
+    //setStyle(boxct,{width:"200px",height:"200px"});
+
+    function setStyle2(ele,strCss){
+        var sty = ele.style;
+        sty.cssText = sty.cssText + strCss;
+    }
+    //setStyle2(boxct,"height:50px;background-color:gray;");
+
+    function setStyle3(el, strCss){
+        function endsWith(str, suffix) {
+            var l = str.length - suffix.length;
+            return l >= 0 && str.indexOf(suffix, l) == l;
+            //console.log(str.length +"=="+ suffix.length+"=="+str.indexOf(suffix, l)+"="+str+"="+suffix+"");
+//            console.log("=="+suffix.length+"==");
+//            console.log("["+l+"]="+str.length+" - "+suffix.length);
+//            console.log("str=["+str+"]");
+//            console.log("suffix="+suffix);
+//            console.log(str.indexOf(suffix,0));
+//            console.log(str.indexOf(suffix, l));
+        }
+        var sty = el.style,
+                cssText = sty.cssText;
+        if(!endsWith(cssText, ';')){
+            cssText += ';';
+        }
+        sty.cssText = cssText + strCss;
+    }
+    setStyle3(boxct,"width:200px;display:block;padding:15px 0px;");
+
+    var str = "abacdasefa";
+//    str="color: green; font-size: 20px;";
+//    console.log("{"+str.indexOf(";",2)+"}");
+    var suffix = "a";
+    var le = str.length ;
+    console.log(le-1);
+    console.log(str.indexOf("a",le-1));
+</script>
+</body>
+</html>
